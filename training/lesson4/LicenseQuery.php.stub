@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Services;
+
+use App\Models\License;
+use Illuminate\Database\Eloquent\Builder;
+
+class LicenseQuery
+{
+    /** @param Builder<License> $query
+     * @return Builder<License>
+     */
+    public function expiring(Builder $query): Builder
+    {
+        // TODO: 有効な本人担当分のうち、終了日が今日〜30日先のものを抽出する。
+        return $query->whereRaw('1 = 0');
+    }
+}
